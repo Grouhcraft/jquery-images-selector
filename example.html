@@ -9,28 +9,19 @@
   </script>
 </head>
 <body>
-  <button onClick="javascript:$('.container').Gallerize({ selectedText: 'I am selected' });">Transform!</button>
-  <p>Please select pictures to remove</p>
+  <button style="padding: 1em;" onClick="javascript:$('.container').ImagesSelector({ selectedText: 'I am selected' }); this.disabled=true;">
+	<strong>Run the plugin: </strong> $('.container').ImagesSelector({ selectedText: 'I am selected' });
+  </button>
+  <p>Demo: <strong>Please select some pictures</strong></p>
   <div class="container">  
-	  <img id="img1" src=
-		"http://t0.gstatic.com/images?q=tbn:ANd9GcR30LS7P57iOOR9DuivMR303YymJvrlITZjV35Nb_DKKSFYWoRrNhbOwQ98og"
-		title="Premiere image" /> 
-	  
-	  <img id="img2" src=
-		"http://www.thephotoargus.com/wp-content/uploads/2010/06/ls2.jpg" title=
-		"Seconde image" /> 
-	  
-	  <img id="img3" src=
-		  "http://www.whitegadget.com/attachments/pc-wallpapers/16950d1224057972-landscape-wallpaper-blue-river-scenery-wallpapers.jpg"
-		  title="Troisieme image" /> 
-	  
-	  <img id="img4" src=
-		  "http://digital-photography-school.com/wp-content/uploads/2007/07/landscape-water.jpg"
-		title="Quatrieme image" /> 
-	  
-	  <img id="img5" src=
-		  "http://www.shafe.co.uk/crystal/images/lshafe/Cole_Romantic_Landscape_c1826.jpg" title=
-		  "Cinquieme image" />
+	  <img id="img1" src="sample-pictures/pic_1.jpg" title="1st pic" /> 
+	  <img id="img2" src="sample-pictures/pic_2.jpg" title="2nd pic" /> 
+	  <img id="img3" src="sample-pictures/pic_3.jpg" title="3th pic" /> 
+	  <img id="img4" src="sample-pictures/pic_4.jpg" title="4th pic" /> 
+	  <img id="img5" src="sample-pictures/pic_5.jpg" title="5th pic" />
   </div>
+  <p>
+	<em>Photos from <a href="https://secure.flickr.com/photos/knoodrake/sets/72157624013312056/with/4587610582/" alt="knoodrake's flickr gallery">knoodrake Flickr's gallery</a>, all rights reserved</em>
+  </p>
 </body>
 </html>

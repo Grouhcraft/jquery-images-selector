@@ -1,0 +1,65 @@
+
+   /*
+    * Settings ----------------------- /*
+    */	$bgColor            : white  ; /*
+    */	$zIndex             : 100    ; /*
+    */	$width              : 150px  ; /*
+    */	$height             : 110px  ; /*
+    */	$overlay_text_align : center ; /*
+    * -------------------------------- /* 
+   */
+
+$position  : relative;
+$fontFamily: sans-serif;
+$float     : left;
+@mixin shadowbox($transparency) {
+-webkit-box-shadow:  0px 3px 4px 0px rgba(0, 0, 0, $transparency);       
+	box-shadow:  0px 3px 4px 0px rgba(0, 0, 0, $transparency); }
+.j-im-sel  
+{	/* --- RESET Styles -------------------------------- */
+	* { padding: 0; margin: 0; border: none; }
+	div, table, p, form { display: block; }
+	table { display: table; } td, th { display: table-cell; }
+	span, em, strong, b, i, img, label, input { display: inline; }
+	padding: 0; margin: 0; border: none;
+	/* --- End RESET ---------------------------------- */
+
+	float: $float; 
+	clear: both;
+	padding: { top: 1em; bottom: 1em; }
+	label {}
+	.imgBox {
+		img {
+		    max-height: $height;
+			max-width: $width;
+			border: 7px solid transparent;
+			z-index: $zIndex - 1;
+			&:hover { border-color: $bgColor; @include shadowbox(0.4); }
+		}
+		height: $height + 10;
+		width: $width + 5;
+		margin: 0.75em;
+		float: $float;	
+	}
+	.subContainer {}
+	.overlay {
+		background-color: $bgColor;
+		color: invert($bgColor);
+		opacity: 0.5;
+		position:$position;
+		top: 0px; 
+		$float:0px;
+		z-index: $zIndex + 10;
+		display: none;
+		padding: 7px;
+		text-align: $overlay_text_align;
+		font-family: $fontFamily;
+		font-size: 0.8em;
+	}
+	.img-cb {
+		position:$position;
+		z-index: $zIndex;
+		padding: 5px;
+	}
+	.shadowbox { @include shadowbox(0.4); }
+}

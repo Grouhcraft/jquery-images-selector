@@ -1,7 +1,8 @@
 (function($) {
-    $.fn.Gallerize = function(options) {
-        options = $.extend({}, $.fn.Gallerize.defaults, options);
+    $.fn.ImagesSelector = function(options) {
+        options = $.extend({}, $.fn.ImagesSelector.defaults, options);
         return this.each(function() {
+			$(this).addClass('j-im-sel');
             $('img', this).each(function() {
 
                 var imgBox = $('<div class="imgBox"></div>');
@@ -34,7 +35,8 @@
                 cb.attr('id', img.attr('id') + '_cb');
                 label.attr('for', cb.attr('id'));
 
-                cb_cont.css('bottom', img.outerHeight() + 'px');
+                overlay.css('top', '-' + img.height() + 'px');
+				cb_cont.css('bottom', img.outerHeight() + 'px');
                 cb_cont.css('right', (img.outerWidth() - cb_cont.outerWidth()) + 'px');
 
                 if (options.selectedText) {
@@ -90,10 +92,9 @@
             });
         });
     };
-    $.fn.Gallerize.defaults = {
+    $.fn.ImagesSelector.defaults = {
         selectedText: false,
         hideCheckbox: true,
-        // buggé (alignement) si false
         bounceHeight: '10px',
         bounceDuration: 200,
         bounce: true
