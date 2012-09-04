@@ -24,15 +24,24 @@
 .j-im-sel span, .j-im-sel em, .j-im-sel strong, .j-im-sel b, .j-im-sel i, .j-im-sel img, .j-im-sel label, .j-im-sel input {
   display: inline;
 }
+.j-im-sel .imgBox,
+.j-im-sel .overlay
+{
+    155px;
+}
 .j-im-sel .imgBox {
   height: 120px;
-  width: 155px;
+  /*width: 155px;*/
   margin: 0.75em;
   float: left;
 }
+.j-im-sel .imgBox,
+.j-im-sel label {
+    text-align: center;
+}    
 .j-im-sel .imgBox img {
   max-height: 110px;
-  max-width: 150px;
+  max-width: 155px;
   border: 7px solid transparent;
   z-index: 99;
 }

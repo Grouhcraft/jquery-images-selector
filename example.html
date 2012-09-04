@@ -2,26 +2,66 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>jQuery-Image-Selector</title>
+	<title>jQuery-Image-Selector</title>
+ 
+	<!-- The 3 mandatory includes -->
 	<link href="jquery-images-selector.css" rel="stylesheet" type="text/css">
 	<script src="http://code.jquery.com/jquery-1.8.0.min.js" type="text/javascript"></script>
 	<script src="jquery-images-selector.js" type="text/javascript"></script>		
-  </script>
+		
+	<script type="text/javascript">
+	//<![CDATA[
+		$(function(){
+		
+			// That's all !
+			$('.container').ImagesSelector();
+			
+			// Options are possible, such as:
+			// $('.container').ImagesSelector({ selectedText: 'Thanks for selecting me !' });
+			//
+			// or, to use the title attribute as selected text:
+			// $('.container').ImagesSelector({ useImagesTitles: true });
+			// 
+			// or, to customize the animation:
+			// $('.container').ImagesSelector({
+			//		bounceHeight: '50px',
+			//		bounceDuration: 1000, 	// 1 second
+			//		bounce: true			// otherwise, won't bounce
+			// });
+			
+		});
+	//]]>
+	</script>
+	
 </head>
 <body>
-  <button style="padding: 1em;" onClick="javascript:$('.container').ImagesSelector({ selectedText: 'I am selected' }); this.disabled=true;">
-	<strong>Run the plugin: </strong> $('.container').ImagesSelector({ selectedText: 'I am selected' });
-  </button>
-  <p>Demo: <strong>Please select some pictures</strong></p>
-  <div class="container">  
-	  <img id="img1" src="sample-pictures/pic_1.jpg" title="1st pic" /> 
-	  <img id="img2" src="sample-pictures/pic_2.jpg" title="2nd pic" /> 
-	  <img id="img3" src="sample-pictures/pic_3.jpg" title="3th pic" /> 
-	  <img id="img4" src="sample-pictures/pic_4.jpg" title="4th pic" /> 
-	  <img id="img5" src="sample-pictures/pic_5.jpg" title="5th pic" />
-  </div>
-  <p>
+	<p>Demo: Please select pictures</p>
+	<div class="container">
+		<img id="img1" src="sample-pictures/pic_1.jpg" title="Premiere image" />
+		<img id="img2" src="sample-pictures/pic_2.jpg" title="Seconde image" />
+		<img id="img3" src="sample-pictures/pic_3.jpg" title="Troisieme image" />
+		<img id="img4" src="sample-pictures/pic_4.jpg" title="Quatrieme image" />
+		<img id="img5" src="sample-pictures/pic_5.jpg" title="Cinquieme image" />
+	</div>
+
+	<!-- Shows the checkboxes values in alert() box, for demo purpose. --> 
+	<script type="text/javascript">
+	//<![CDATA[
+		function demo_button() {
+		var txt = "Checkboxes:\n";
+		$('input[type=checkbox]').each(function(){
+			txt += "\tcheckbox named "
+				+ $(this).attr('name') + ' is '
+				+ ($(this).is(':checked') ? 'checked' : 'unchecked')
+				+ "\n";
+		});        
+		alert(txt);
+	}
+	//]]>
+	</script>
+	<button type="button" onclick="demo_button();">
+		See checkboxes values
+	</button>
 	<em>Photos from <a href="https://secure.flickr.com/photos/knoodrake/sets/72157624013312056/with/4587610582/" alt="knoodrake's flickr gallery">knoodrake Flickr's gallery</a>, all rights reserved</em>
-  </p>
 </body>
 </html>
